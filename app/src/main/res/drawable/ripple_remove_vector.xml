@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?android:attr/colorControlHighlight">
+
+    <!-- Primeiro vetor -->
+    <item android:drawable="@drawable/baseline_remove_24" />
+
+    <!-- Efeito de toque com círculo -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="?android:attr/colorControlHighlight"/>
+        </shape>
+    </item>
+</ripple>
