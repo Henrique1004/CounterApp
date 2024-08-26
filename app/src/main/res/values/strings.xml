@@ -3,4 +3,5 @@
     <string name="salve_pessoal">Salve pessoal</string>
     <string name="button">Button</string>
     <string name="counter">Counter</string>
+    <string name="reset">Reset</string>
 </resources>

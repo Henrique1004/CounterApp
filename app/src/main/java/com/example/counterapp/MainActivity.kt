@@ -1,7 +1,9 @@
 package com.example.counterapp
 
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -29,13 +31,40 @@ class MainActivity : AppCompatActivity() {
         binding.out.text = counter.toString()
 
         binding.btnRemove.setOnClickListener {
-            counter -= 1
-            binding.out.text = counter.toString()
+            if(ehZero(counter)){
+                showAlert()
+            }
+            else {
+                counter -= 1
+                binding.out.text = counter.toString()
+            }
         }
 
         binding.btnAdd.setOnClickListener {
             counter += 1
             binding.out.text = counter.toString()
         }
+
+        binding.rButton.setOnClickListener {
+            counter = 0
+            binding.out.text = counter.toString()
+        }
+    }
+    fun showAlert() {
+        // Criar o AlertDialog.Builder
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Aviso")
+        builder.setMessage("Não é posível números negativos.")
+        builder.setPositiveButton("OK") { dialogInterface, _ ->
+            dialogInterface.dismiss()
+        }
+        // Exibir o AlertDialog
+        val alertDialog = builder.create()
+        alertDialog.show()
+    }
+
+    fun ehZero(num : Int) : Boolean{
+        if (num == 0) return true
+        return false
     }
 }
