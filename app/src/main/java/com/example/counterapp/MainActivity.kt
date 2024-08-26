@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         // Criar o AlertDialog.Builder
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Aviso")
-        builder.setMessage("Não é posível números negativos.")
+        builder.setMessage("Não é possível números negativos.")
         builder.setPositiveButton("OK") { dialogInterface, _ ->
             dialogInterface.dismiss()
         }
